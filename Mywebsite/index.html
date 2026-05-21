@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Govindu | Java Full Stack Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">G</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+      <p class="loader-text">Initializing...</p>
+    </div>
+  </div>
+
+  <!-- ===== SCROLL PROGRESS ===== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Govindu<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero-section">
+    <!-- Animated background -->
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <div class="hero-container">
+      <!-- Left: Text Content -->
+      <div class="hero-text">
+        <p class="hero-greeting">
+          <span class="greeting-line"></span>
+          Hey there, I'm
+        </p>
+        <h1 class="hero-name">Govindu</h1>
+        <div class="hero-title">
+          <span class="title-prefix">&gt; </span>
+          <span id="typed-text"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-bio">
+          A passionate <strong>Java Full Stack Developer</strong> crafting robust backends and elegant frontends.
+          Driven by clean code, scalable architecture, and continuous learning.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> View Projects
+          </a>
+          <a href="Govindu_java_Developer.pdf" class="btn btn-outline" download>
+            <i class="fas fa-download"></i> Download CV
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/Govind-Pallapu" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/govindu-pallapu5924a331" target="_blank" class="social-icon"
+            aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:govindupallapu7@email.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Profile Image -->
+      <div class="hero-image-wrap">
+        <div class="image-ring ring-1"></div>
+        <div class="image-ring ring-2"></div>
+        <div class="image-ring ring-3"></div>
+        <div class="hero-avatar">
+          <div class="avatar-inner">
+            <img src="mypic3.jpeg" alt="Govind" class="avatar-photo" />
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="float-badge badge-java">
+          <i class="fab fa-java"></i> Java
+        </div>
+        <div class="float-badge badge-spring">
+          <i class="fas fa-leaf"></i> Spring Boot
+        </div>
+        <div class="float-badge badge-react">
+          <i class="fab fa-react"></i> React
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// 01. about_me</span>
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Image -->
+        <div class="about-image-wrap" data-aos="fade-right">
+          <div class="about-image-frame">
+            <div class="about-avatar">
+              <img src="my-office-style-photo.jpeg" alt="Govind" class="about-photo" />
+            </div>
+            <div class="about-image-deco"></div>
+          </div>
+          <!-- Stats -->
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num" data-count="2">0</span>+
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-count="10">0</span>+
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-count="1">0</span>+
+              <span class="stat-label">Years Learning</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-count="100">0</span>%
+              <span class="stat-label">Dedication</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Info -->
+        <div class="about-content" data-aos="fade-left">
+          <p class="about-intro">
+            I'm a <span class="text-cyan">BSc Graduate</span> deeply passionate about software development.
+            Currently leveling up my skills in <span class="text-cyan">Java Full Stack Development</span>,
+            with a special focus on backend engineering and REST API design.
+          </p>
+          <p class="about-body">
+            My tech journey revolves around building scalable, maintainable systems using
+            <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>React.js</strong>, and <strong>MySQL</strong>.
+            I believe great software is the intersection of clean architecture, thoughtful design, and a relentless
+            drive to solve real problems.
+          </p>
+
+          <div class="about-cards">
+            <div class="info-card">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <strong>Education</strong>
+                <span>BSc Graduate</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Location</strong>
+                <span>Hyderabad</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-code"></i>
+              <div>
+                <strong>Focus</strong>
+                <span>Backend &amp; REST APIs</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-lightbulb"></i>
+              <div>
+                <strong>Trait</strong>
+                <span>Quick Learner &amp; Problem Solver</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary mt-2">
+            <i class="fas fa-paper-plane"></i> Let's Talk
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// 02. my_skills</span>
+        <h2 class="section-title">Tech <span class="highlight">Stack</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Skill Categories -->
+      <div class="skills-wrapper">
+
+        <!-- Frontend -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="category-header">
+            <i class="fas fa-palette"></i>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <i class="fab fa-html5 skill-icon html"></i>
+              <span>HTML5</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-css3-alt skill-icon css"></i>
+              <span>CSS3</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-js skill-icon js"></i>
+              <span>JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="75"></div>
+              </div>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-react skill-icon react"></i>
+              <span>React.js</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="70"></div>
+              </div>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-bootstrap skill-icon bootstrap"></i>
+              <span>Bootstrap</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+              <span class="skill-pct">80%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="category-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <i class="fab fa-java skill-icon java"></i>
+              <span>Java</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-database skill-icon jdbc"></i>
+              <span>JDBC</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="78"></div>
+              </div>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-cogs skill-icon servlet"></i>
+              <span>Servlets</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="75"></div>
+              </div>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-file-code skill-icon jsp"></i>
+              <span>JSP</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="72"></div>
+              </div>
+              <span class="skill-pct">72%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-leaf skill-icon spring"></i>
+              <span>Spring Boot</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="75"></div>
+              </div>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-plug skill-icon api"></i>
+              <span>REST APIs</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+              <span class="skill-pct">80%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database & Tools -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+          <div class="category-header">
+            <i class="fas fa-database"></i>
+            <h3>Database &amp; Tools</h3>
+          </div>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <i class="fas fa-database skill-icon mysql"></i>
+              <span>MySQL</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-eclipse skill-icon eclipse"></i>
+              <span>Eclipse</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-code skill-icon idea"></i>
+              <span>IntelliJ IDEA</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fab fa-git-alt skill-icon git"></i>
+              <span>Git</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="78"></div>
+              </div>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-card">
+              <i class="fas fa-paper-plane skill-icon postman"></i>
+              <span>Postman</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="82"></div>
+              </div>
+              <span class="skill-pct">82%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Concepts -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+          <div class="category-header">
+            <i class="fas fa-brain"></i>
+            <h3>Core Concepts</h3>
+          </div>
+          <div class="skill-grid concepts-grid">
+            <div class="concept-badge"><i class="fas fa-cubes"></i> OOPs</div>
+            <div class="concept-badge"><i class="fas fa-layer-group"></i> Collections</div>
+            <div class="concept-badge"><i class="fas fa-stream"></i> Stream API</div>
+            <div class="concept-badge"><i class="fas fa-random"></i> Multithreading</div>
+            <div class="concept-badge"><i class="fas fa-key"></i> JWT Auth</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// 03. my_projects</span>
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="project-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="java">Java</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+
+        <!-- Project 1: Online Book Store -->
+        <div class="project-card" data-category="fullstack java" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/Govind-Pallapu/Online-BookStore" target="_blank" class="overlay-btn">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-number">01</div>
+            <h3 class="project-title">Online Book Store</h3>
+            <p class="project-desc">
+              A full-featured e-commerce platform for books with secure JWT authentication,
+              CRUD operations, and a seamless shopping experience powered by React.js and Spring Boot.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JWT</span>
+            </div>
+            <div class="project-features">
+              <span><i class="fas fa-check-circle"></i> User Authentication</span>
+              <span><i class="fas fa-check-circle"></i> CRUD Operations</span>
+              <span><i class="fas fa-check-circle"></i> REST APIs</span>
+              <span><i class="fas fa-check-circle"></i> Secure Login</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Govind-Pallapu/Online-BookStore" target="_blank"
+                class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="#" target="_blank" class="btn btn-sm btn-primary">
+                <i class="fas fa-rocket"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Library Management System -->
+        <div class="project-card" data-category="backend java" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder lib">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com" target="_blank" class="overlay-btn">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-number">02</div>
+            <h3 class="project-title">Library Management System</h3>
+            <p class="project-desc">
+              A comprehensive library management solution built with JSP, Servlets, and SQL,
+              enabling admin control over books, members, issuances, and returns.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">JSP</span>
+              <span class="tech-tag">Servlets</span>
+              <span class="tech-tag">SQL</span>
+            </div>
+            <div class="project-features">
+              <span><i class="fas fa-check-circle"></i> Add / Delete Books</span>
+              <span><i class="fas fa-check-circle"></i> Update Records</span>
+              <span><i class="fas fa-check-circle"></i> Issue &amp; Return</span>
+              <span><i class="fas fa-check-circle"></i> Admin Management</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Govind-Pallapu/Library-Management-System" target="_blank"
+                class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="#" target="_blank" class="btn btn-sm btn-primary">
+                <i class="fas fa-rocket"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// 04. education</span>
+        <h2 class="section-title">My <span class="highlight">Journey</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline" data-aos="fade-up">
+
+        <div class="timeline-item left">
+          <div class="timeline-dot">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2021 – 2024</div>
+            <h3>Bachelor of Science (BSc)</h3>
+            <p class="timeline-inst"><i class="fas fa-university"></i>Acharya Nagarjuna University, Guntur</p>
+            <p class="timeline-desc">
+              Completed my undergraduate degree, building a strong foundation in mathematics,
+              logical thinking, and computational concepts that fuel my software development journey.
+            </p>
+            <div class="timeline-badge">
+              <i class="fas fa-award"></i> Graduated
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-dot">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2024 – Present</div>
+            <h3>Java Full Stack Development</h3>
+            <p class="timeline-inst"><i class="fas fa-building"></i> Training Institute</p>
+            <p class="timeline-desc">
+              Intensive program covering Core Java, Advanced Java, Spring Boot, React.js, MySQL,
+              REST APIs, and industry-standard development practices and tools.
+            </p>
+            <div class="timeline-badge ongoing">
+              <i class="fas fa-circle"></i> Ongoing
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS SECTION ===== -->
+  <section id="certifications" class="section certs-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// 05. certifications</span>
+        <h2 class="section-title">My <span class="highlight">Credentials</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="cert-icon"><i class="fab fa-java"></i></div>
+          <div class="cert-info">
+            <h4>Java Programming Fundamentals</h4>
+            <p class="cert-platform"><i class="fas fa-award"></i> Vcube Software Soluctions</p>
+            <p class="cert-date"><i class="far fa-calendar-alt"></i> 2025</p>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="cert-icon"><i class="fas fa-leaf"></i></div>
+          <div class="cert-info">
+            <h4>Spring Boot &amp; REST API Development</h4>
+            <p class="cert-platform"><i class="fas fa-award"></i> Vcube Software Soluctions</p>
+            <p class="cert-date"><i class="far fa-calendar-alt"></i> 2025</p>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="cert-icon"><i class="fab fa-react"></i></div>
+          <div class="cert-info">
+            <h4>React.js – The Complete Guide</h4>
+            <p class="cert-platform"><i class="fas fa-award"></i> Vcube Software Soluctions</p>
+            <p class="cert-date"><i class="far fa-calendar-alt"></i> 2025</p>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="cert-icon"><i class="fas fa-database"></i></div>
+          <div class="cert-info">
+            <h4>MySQL Database Design &amp; SQL</h4>
+            <p class="cert-platform"><i class="fas fa-award"></i>Vcube Software Soluctions</p>
+            <p class="cert-date"><i class="far fa-calendar-alt"></i> 2025</p>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="cert-info">
+            <h4>Software Engineer &amp;Backend</h4>
+            <p class="cert-platform"><i class="fas fa-award"></i>Haker Rank</p>
+            <p class="cert-date"><i class="far fa-calendar-alt"></i> 2026</p>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="cert-icon"><i class="fab fa-git-alt"></i></div>
+          <div class="cert-info">
+            <h4>Git &amp; GitHub Essentials</h4>
+            <p class="cert-platform"><i class="fas fa-award"></i> freeCodeCamp</p>
+            <p class="cert-date"><i class="far fa-calendar-alt"></i> 2026</p>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// 06. services</span>
+        <h2 class="section-title">What I <span class="highlight">Offer</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon-wrap">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Frontend Development</h3>
+          <p>Crafting responsive, interactive user interfaces with React.js, HTML5, CSS3, and Bootstrap for a seamless
+            user experience.</p>
+          <div class="service-line"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon-wrap">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Backend Development</h3>
+          <p>Building robust, scalable server-side applications using Java, Spring Boot, Servlets, JSP, and JDBC with
+            clean architecture.</p>
+          <div class="service-line"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon-wrap">
+            <i class="fas fa-plug"></i>
+          </div>
+          <h3>REST API Development</h3>
+          <p>Designing and building secure, well-documented RESTful APIs with Spring Boot and JWT authentication for
+            modern web apps.</p>
+          <div class="service-line"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon-wrap">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Responsive Web Design</h3>
+          <p>Ensuring websites look and perform flawlessly across all screen sizes — from mobile to desktop — using
+            modern CSS techniques.</p>
+          <div class="service-line"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// 07. get_in_touch</span>
+        <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info" data-aos="fade-right">
+          <h3 class="contact-tagline">Let's Build Something Amazing Together</h3>
+          <p class="contact-desc">
+            Have a project in mind, a question, or just want to say hello?
+            I'm always open to new opportunities and collaborations.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon-wrap"><i class="fas fa-envelope"></i></div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:govind@email.com">govindupallapu7@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap"><i class="fas fa-phone"></i></div>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:+91XXXXXXXXXX">+91 7816079958</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <strong>Location</strong>
+                <span>Hyderabad</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap"><i class="fab fa-github"></i></div>
+              <div>
+                <strong>GitHub</strong>
+                <a href="https://github.com/Govind-Pallapu" target="_blank">github.com/govindu</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/govindu-pallapu5924a331"
+                  target="_blank">linkedin.com/in/govindu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-wrap" data-aos="fade-left">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder=" " required />
+              <label for="name">Your Name</label>
+              <span class="form-error" id="name-error"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder=" " required />
+              <label for="email">Email Address</label>
+              <span class="form-error" id="email-error"></span>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder=" " required />
+              <label for="subject">Subject</label>
+              <span class="form-error" id="subject-error"></span>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+              <label for="message">Your Message</label>
+              <span class="form-error" id="message-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+              <span class="btn-loading hidden"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+            </button>
+            <div id="form-success" class="form-success hidden">
+              <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <span class="logo-bracket">&lt;</span>Govind<span class="logo-bracket">/&gt;</span>
+          </a>
+          <p>Java Full Stack Developer passionate about building scalable solutions and learning every day.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/Govind-Pallapu" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/govindu-pallapu5924a331" target="_blank"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:govindupallapu7@gmail.com"><i class="fas fa-envelope"></i></a>
+
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#services">Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-envelope"></i> govindupallapu7@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Hyderabad</p>
+          <p><i class="fab fa-github"></i> https://github.com/Govind-Pallapu</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Govind. Crafted with <i class="fas fa-heart"></i> and lots of <i class="fab fa-java"></i></p>
+        <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING SOCIAL SIDEBAR ===== -->
+  <div class="floating-socials">
+    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:govind@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <div class="social-line"></div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <!-- AOS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Typed.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
